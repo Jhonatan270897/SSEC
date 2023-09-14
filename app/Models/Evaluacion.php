@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Evaluacion extends Model
 {
+    public $table = 'evaluaciones';
     public $timestamps = true;
     
     protected $fillable = [
-        'fecha_evaluacion',
         'calificacion',
         'user_id',
         'pregunta_id',
