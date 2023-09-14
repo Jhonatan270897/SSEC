@@ -27,6 +27,7 @@ class HomeController extends Controller
         $evaluacion->user_id = auth()->id();
         $evaluacion->pregunta_id = 1;
         $evaluacion->save();
+        sleep(1);
         return redirect()->route('home');
     }
 }

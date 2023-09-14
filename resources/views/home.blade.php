@@ -11,7 +11,8 @@
                 </div>
             </div>
             <div class="widget-content widget-content-area">
-                <p class="mb-4">¿Está satisfecho con la calidad de servicio ofrecida por la Oficina General de Admisión?</p>
+                <p class="mb-4">¿Está satisfecho con la calidad de servicio ofrecida por la Oficina General de Admisión?
+                </p>
 
                 <form method="post" action="{{ route('home.store') }}">
                     @csrf
@@ -51,9 +52,14 @@
                         </label>
                     </div>
 
-                    <button class="btn btn-primary submit-fn mt-2" type="submit">Enviar respuesta</button>
+                    <button id="resp" class="btn btn-primary submit-fn mt-2" type="submit">Enviar respuesta</button>
                 </form>
             </div>
         </div>
     </div>
+    <script>
+        $('#resp').on('click', function() {
+            noty("Gracias por su tiempo", 1)
+        });
+    </script>
 @endsection

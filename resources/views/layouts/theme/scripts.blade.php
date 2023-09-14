@@ -4,7 +4,7 @@
 <script src="{{ asset('plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
 <script src="{{ asset('assets/js/app.js') }}"></script>
 <script>
-/*     $(document).ready(function() {
+    /*     $(document).ready(function() {
         App.init();
     }); */
 </script>
@@ -14,10 +14,10 @@
 <script>
     function noty(msg, option = 1) {
         Snackbar.show({
-            text: msg.toUpperCAse(),
+            text: msg.toUpperCase(),
             actionText: 'CERRAR',
             actionTextColor: '#fff',
-            backgroundColor: option == 1 ? '#3b3f5c' : '#e7515a',
+            backgroundColor: option == 1 ? '#66D512' : '#e7515a',
             pos: 'top-right'
         });
     }
