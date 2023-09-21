@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome');
 });
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/home/store', [App\Http\Controllers\HomeController::class, 'store'])->name('home.store');
+Route::post('/home/store', [App\Http\Controllers\EvaluacionController::class, 'store'])->name('home.store');
+Route::get('/reportes', [App\Http\Controllers\EvaluacionController::class, 'index'])->name('reportes');
