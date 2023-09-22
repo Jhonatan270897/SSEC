@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Exports\EvaluacionExport;
+use Maatwebsite\Excel\Facades\Excel;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,3 +23,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/home/store', [App\Http\Controllers\EvaluacionController::class, 'store'])->name('home.store');
 Route::get('/reportes', [App\Http\Controllers\EvaluacionController::class, 'index'])->name('reportes');
+Route::get('/excel', function () {return Excel::download(new EvaluacionExport, 'evaluaciones.xlsx');});
