@@ -19,35 +19,35 @@
                     @csrf
                     <div class="n-chk">
                         <label class="new-control new-radio new-radio-text radio-classic-success">
-                            <input type="radio" class="new-control-input" name="calif{{$pregunta->id}}" value="5">
+                            <input type="radio" class="new-control-input" name="calif" value="5">
                             <span class="new-control-indicator"></span><span class="new-radio-content">Muy satisfecho</span>
                         </label>
                     </div>
 
                     <div class="n-chk">
                         <label class="new-control new-radio new-radio-text radio-classic-info">
-                            <input type="radio" class="new-control-input" name="calif{{$pregunta->id}}" value="4">
+                            <input type="radio" class="new-control-input" name="calif" value="4">
                             <span class="new-control-indicator"></span><span class="new-radio-content">Satisfecho</span>
                         </label>
                     </div>
 
                     <div class="n-chk">
                         <label class="new-control new-radio new-radio-text radio-classic-default">
-                            <input type="radio" class="new-control-input" name="calif{{$pregunta->id}}" value="3" checked="">
+                            <input type="radio" class="new-control-input" name="calif" value="3" checked="">
                             <span class="new-control-indicator"></span><span class="new-radio-content">Neutral</span>
                         </label>
                     </div>
 
                     <div class="n-chk">
                         <label class="new-control new-radio new-radio-text radio-classic-warning">
-                            <input type="radio" class="new-control-input" name="calif{{$pregunta->id}}" value="2">
+                            <input type="radio" class="new-control-input" name="calif" value="2">
                             <span class="new-control-indicator"></span><span class="new-radio-content">Insatisfecho</span>
                         </label>
                     </div>
 
                     <div class="n-chk">
                         <label class="new-control new-radio new-radio-text radio-classic-danger">
-                            <input type="radio" class="new-control-input" name="calif{{$pregunta->id}}" value="1">
+                            <input type="radio" class="new-control-input" name="calif" value="1">
                             <span class="new-control-indicator"></span><span class="new-radio-content">Muy insatisfecho</span>
                         </label>
                     </div>

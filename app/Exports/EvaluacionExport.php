@@ -114,7 +114,7 @@ class EvaluacionExport implements FromCollection, WithMapping, ShouldAutoSize, W
                     $event->sheet->getDelegate()->getStyle('A' . ($i + 2))->applyFromArray($centrar);
                     $event->sheet->getDelegate()->getStyle('B' . ($i + 2))->applyFromArray($centrar);
                     $event->sheet->getDelegate()->getStyle('C' . ($i + 2))->applyFromArray($centrar);
-                    $event->sheet->getDelegate()->getStyle('D ' . ($i + 2))->applyFromArray($centrar);
+                    $event->sheet->getDelegate()->getStyle('D  ' . ($i + 2))->applyFromArray($centrar);
                     $event->sheet->getDelegate()->getStyle('E' . ($i + 2))->applyFromArray($centrar);
                 }
                 $event->sheet->setCellValue('A' . ($this->item + 3), 'Fuente: Oficina General de Admisión');
