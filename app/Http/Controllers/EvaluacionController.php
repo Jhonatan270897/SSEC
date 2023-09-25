@@ -14,14 +14,11 @@ class EvaluacionController extends Controller
     }
 
     public function index()
-    {   $fecin='2023-09-14';
-        $fecfin='2023-09-22';
-        /* $evaluaciones = Evaluacion::get();  */
+    {   $diaA=date("Y/m/d");
         $evaluaciones= Evaluacion::select(DB::raw('count(id) as CANT,sum(calificacion) as SUMA,DATE(updated_at) as DIA,pregunta_id'))
         ->groupBy('pregunta_id')
         ->groupBy('DIA')->orderBy('DIA','DESC')->get();
-        /* $evaluaciones = Evaluacion::whereBetween('updated_at',[$fecin,$fecfin])->get(); */
-        return view('reportes', compact('evaluaciones'));
+        return view('reportes', compact('evaluaciones','diaA'));
     }
 
     public function create()

@@ -1,13 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="col-xl-12 col-12 layout-spacing">
+    <div class="container">
+        <div>
+            <input id="basicFlatpickri" value="{{ $diaA }}" class="form-control flatpickr flatpickr-input active"
+                type="text" placeholder="Seleccione fecha..." readonly="readonly">
+        </div>
+        <div>
+            <input id="basicFlatpickrf" value="{{ $diaA }}" class="form-control flatpickr flatpickr-input active"
+                type="text" placeholder="Seleccione fecha..." readonly="readonly">
+        </div>
         <div id="chartArea" class="col-xl-12 layout-spacing">
             <div class="statbox widget box box-shadow">
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                            <h4>Promedio diario </h4>
+                            <h4>Promedio diario</h4>
                         </div>
                     </div>
                 </div>
@@ -22,7 +30,9 @@
     <script>
         var dPregunta1 = [];
         var dHoraFec1 = [];
-
+        var f1 = flatpickr(document.getElementById('basicFlatpickri'));
+        var f2 = flatpickr(document.getElementById('basicFlatpickrf'));
+        var lchart;
 
         function LlenarVariable() {
             Object.entries(@json($evaluaciones)).forEach(([key, value]) => {
@@ -65,15 +75,19 @@
                     },
                 }
             }
-            var lchart = new ApexCharts(
+
+            callback();
+            lchart = new ApexCharts(
                 document.querySelector('#s-line-area'),
                 sLineArea
             );
-
-            callback();
             lchart.render();
-            console.log(sLineArea);
         }
+
+        document.querySelector("#basicFlatpickri").addEventListener("change", (event) => {
+            lchart.zoomX(document.querySelector("#basicFlatpickri").value, document.querySelector(
+                "#basicFlatpickrf").value)
+        });
 
         LlenarChart(LlenarVariable);
     </script>
