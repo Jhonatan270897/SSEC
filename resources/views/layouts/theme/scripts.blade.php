@@ -7,14 +7,3 @@
 <script src="{{ asset('assets/js/custom.js') }}"></script>
 <script src="{{ asset('plugins/sweetalerts/sweetalert2.min.js') }}"></script>
 <script src="{{ asset('plugins/notification/snackbar/snackbar.min.js') }}"></script>
-<script>
-    function noty(msg, option = 1) {
-        Snackbar.show({
-            text: msg.toUpperCase(),
-            actionText: 'X',
-            actionTextColor: '#fff',
-            backgroundColor: option == 1 ? '#66D512' : '#e7515a',
-            pos: 'top-right'
-        });
-    }
-</script>

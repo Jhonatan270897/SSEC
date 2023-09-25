@@ -36,7 +36,7 @@ class EvaluacionController extends Controller
         $evaluacion->user_id = auth()->id();
         $evaluacion->pregunta_id = 1;
         $evaluacion->save();
-        sleep(0.5);
+        sleep(1);
         return redirect()->route('home');
     }
 
