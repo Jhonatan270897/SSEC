@@ -15,7 +15,7 @@ class EvaluacionController extends Controller
 
     public function index()
     {   $diaA=date("Y/m/d");
-        $evaluaciones= Evaluacion::select(DB::raw('count(id) as CANT,sum(calificacion) as SUMA,DATE(updated_at) as DIA,pregunta_id'))
+        $evaluaciones= Evaluacion::select('count(id) as CANT','sum(calificacion) as SUMA','DATE(updated_at) as DIA','pregunta_id')
         ->groupBy('pregunta_id')
         ->groupBy('DIA')->orderBy('DIA','DESC')->get();
         return view('reportes', compact('evaluaciones','diaA'));
