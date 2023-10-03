@@ -20,7 +20,8 @@ class EvaluacionExport implements FromCollection, WithMapping, ShouldAutoSize, W
 
     public function __construct()
     {
-        $this->evaluaciones = Evaluacion::join('preguntas', 'preguntas.id', '=', 'evaluaciones.pregunta_id')
+        $this->evaluaciones = Evaluacion::select('evaluaciones.calificacion','preguntas.descripcion','evaluaciones.updated_at','users.name')
+        ->join('preguntas', 'preguntas.id', '=', 'evaluaciones.pregunta_id')
             ->join('users', 'users.id', '=', 'evaluaciones.user_id')
             ->where('preguntas.activo', '=', '1')->get();
     }
